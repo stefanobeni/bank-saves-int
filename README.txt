@@ -7,3 +7,5 @@ The code looks at three different types of savings accounts, all of which can be
 3. **Flexible Savings Account**: Interest rate of 2%. Can withdraw at any point.
 
 The code also includes a `graph()` function. This function illustrates the optimum times to withdraw from the **Online Bonus Savings Account**. The output is a graph like the one below.
+
+![withdrawal rate graph](https://github.com/stefanobeni/bank-saves-int/blob/main/withdrawal-rate-graph.png?raw=true)
