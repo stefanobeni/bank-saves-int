@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-# This code is kept here for comparison of comments structure
+# This code is currently INCOMPLETE
+# It is kept here for comparison
 '''
 def OBSA(OBSA_deposit, FSA_deposit, mthly, out_rt, int_1, int_2):
     """

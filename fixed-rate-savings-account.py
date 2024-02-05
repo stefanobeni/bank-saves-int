@@ -2,9 +2,13 @@ import numpy as np
 
 import numpy as np
 
+# TO DO:
+# change order of interest rates to an order that makes sense.
+
 
 def Fixed_Rate(tot_savs, year, out_rt):
     '''
+    Code NOT complete
     It is more complicated than this because you need to consider the interest gained on the interest generated every
     month by the Fixed Rates Savings Account.
     '''
@@ -14,9 +18,9 @@ def Fixed_Rate(tot_savs, year, out_rt):
     OBSA_deposit = year
     FSA_deposit = 0
 
-    int_1 = 0.04  # Interest rate of bonus savings account (for withdrawal month) and flexible savings account.
-    int_2 = 0.02  # Bonus interest rate of bonus savings account.
-    int_3 = 0.05  # Interest rate of fixed rate savings account.
+    int_1 = 0.05  # Interest rate of bonus savings account (for withdrawal month) and flexible savings account.
+    int_2 = 0.01  # Bonus interest rate of bonus savings account.
+    int_3 = 0.08  # Interest rate of fixed rate savings account.
 
     i = 1
     accmltd_interest_FRSA = FRSA_deposit * int_3
@@ -96,6 +100,7 @@ def Fixed_Rate(tot_savs, year, out_rt):
     return output
 
 
+# Change these parameters with the values that apply to yourself.
 total_savings = 00000     # The total amount of savings you have accumulated.
 year_need = 00000         # The amount of savings you need to live for a year.
                           # (This is because you cannot access money in

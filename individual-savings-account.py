@@ -35,7 +35,13 @@ def LISA(yearly_deposit, age, interest_rt_perc):
     return new_deposit
 
 
-print("At 60, your LISA account will hold: £" + '%.2f' % LISA(4000, 35, 3.25))
+# Change these parameters with the values that apply to yourself.
+year_deposit = 4000     # The amount you are able to deposit every year into your LISA account.
+years = 35              # Your age.
+int_rate = 3.25         # The yearly interest rate of the account you are interested in.
+
+
+print("At 60, your LISA account will hold: £" + '%.2f' % LISA(year_deposit, years, int_rate))
 
 
 # To be included:

@@ -15,7 +15,7 @@ def OBSA(OBSA_deposit, FSA_deposit, mthly, out_rt, int_1, int_2):
 
     :param OBSA_deposit:
     :param FSA_deposit:
-    :param mnthly:
+    :param mthly:
     :param out_rt:          --- This is the withdrawal rate. In other words it is the number of months you withdraw
                                 money for in the event that you withdraw.
                                 Example:
@@ -111,15 +111,25 @@ def OBSA(OBSA_deposit, FSA_deposit, mthly, out_rt, int_1, int_2):
 # To be included:
 # Check that interest rate increase is lower than the monthly need.
 
-results = OBSA(3600, 0, 250, 3, 0.04, 0.02)
 
-print("The final amount in the OBSA account is: " + str(results["Final_OBSA_deposit"]))
-print("The final amount in the FSA account is: " + str(results["Final_FSA_deposit"]))
+# Change these parameters with the values that apply to yourself.
+init_OBSA_deposit = 8400  # Initial deposit in the OBSA account.
+init_FSA_deposit = 0      # Initial deposit in the FSA account
+monthly = 700             # Amount needed to live for a month
+withdrawal_rate = 3
+int_OBSA = 0.04
+int_FSA = 0.02
 
-print("The accumulated interest is: "+str(results["Accumulated OBSA interest"] + results["Accumulated FSA interest"]))
+results = OBSA(init_OBSA_deposit, init_FSA_deposit, monthly, withdrawal_rate, int_OBSA, int_FSA)
+
+print("The final amount in the OBSA account is: £" + "%.2f" % results["Final_OBSA_deposit"])
+print("The final amount in the FSA account is: £" + "%.2f" % results["Final_FSA_deposit"])
+
+print("The accumulated interest is: £"+"%.2f" % (results["Accumulated OBSA interest"]
+                                                + results["Accumulated FSA interest"]))
 
 
-def graph():
+def graph(OBSA_deposit, FSA_deposit, mthly, int_1, int_2):
     """
     The function returns a graph that shows the optimum withdrawal rate to maximise the accumulated interest
     given the amount of money in your savings and the amount you need to live every month.
@@ -128,7 +138,7 @@ def graph():
     array_y = np.zeros(10)
 
     for element in array_x:
-        results = OBSA(3409.91, 0, 250, array_x[element-1], 0.04, 0.02)
+        results = OBSA(OBSA_deposit, FSA_deposit, mthly, array_x[element-1], int_1, int_2)
         array_y[element-1] = results["Accumulated OBSA interest"] + results["Accumulated FSA interest"]
 
     plt.plot(array_x, array_y)
@@ -140,4 +150,4 @@ def graph():
     return None
 
 
-graph()
+graph(init_OBSA_deposit, init_FSA_deposit, monthly, int_OBSA, int_FSA)
