@@ -9,3 +9,6 @@ The code looks at three different types of savings accounts, all of which can be
 The code also includes a `graph()` function. This function illustrates the optimum times to withdraw from the **Online Bonus Savings Account**. The output is a graph like the one below.
 
 ![withdrawal rate graph](https://github.com/stefanobeni/bank-saves-int/blob/main/withdrawal-rate-graph.png?raw=true)
+*Figure 1*: Graph showing the interest accumulated over a year depending on the withdrawal rate.
+
+**Example**: With the example parameters in the 'online-bonus-savings-account' code, the optimum number of months to withdraw money from the OBSA account would be 4 months (although the accumulated interest doesn't change much in this case for 3 and 5 months).
